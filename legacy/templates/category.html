@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% autoescape off %}
+        <div class="col-md-8">
+
+        {% for article in articles %}
+          <h1 class="my-4">{{ category_name }}</h1>
+          {{ category_breadcrumbs }}
+
+          <div class="card mb-4">
+            {{ sub
+          </div>
+        {% endfor %}
+        </div>
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% autoescape off %}
+        <div class="col-md-8">
+
+        {% for article in articles %}
+          <h1 class="my-4">{{ article.headline }}</h1>
+          {{ category_breadcrumbs }}
+
+          <div class="card mb-4">
+            <!-- <img class="card-img-top" src="{ article_image }" alt="{ article_image_alt }"> -->
+            <div class="card-body">
+              <h2 class="card-title">{{ article.headline }}</h2>
+              <p class="card-text">{{ article.article }}</p>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on {{ article.DatePosted|date }} by
+              <a href="/authors/{{ article.AuthorID }}">{{ article.AuthorName }}</a>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+{% endautoescape %}
+{% endblock %}
